@@ -1,0 +1,34 @@
+# Auto-generated sources list
+set(SOURCES
+    boostMLF.cpp
+    boostMLF_AB.cpp
+    build/CMakeFiles/3.30.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+    cpusumD.cpp
+    gammaGslD.cpp
+    gammaLibD.cpp
+    gammaLibF.cpp
+    gammaSerB1024.cpp
+    gammaSerB125.cpp
+    gammaSerB1331.cpp
+    gammaSerD.cpp
+    gammaSerF.cpp
+    gammaSerL.cpp
+    ompGammaBoostD.cpp
+    ompGammaBoostL.cpp
+    ompGammaBoostL1024.cpp
+    ompGammaBoostL125.cpp
+    ompGammaBoostL1331.cpp
+    ompGammaBoostL64.cpp
+    ompGammaGslD.cpp
+    ompGammaLanD.cpp
+    ompGammaLibD copy.cpp
+    ompGammaLibD.cpp
+    ompGammaLibF.cpp
+    ompGammaLibL.cpp
+    ompGammaSerD.cpp
+    ompGammaSerF.cpp
+    ompGammaSerL27.cpp
+    ompGammaSerL30.cpp
+    ompGammaSerL44.cpp
+    testGlobalPadeMLF.cpp
+)

@@ -1,0 +1,17 @@
+ sudo apt-get install gsl-bin libgsl0-dev
+CMAKE_INSTALL_PREFIX is explicitly set to ~/bin, ensuring that the binary is installed there.
+
+1. Configure and Build:
+
+mkdir build && cd build
+cmake ..
+make
+
+2. Install
+make install
+
+The binary testInstallationFC will be installed to ~/bin.
+
+3. Run:
+~/bin/testInstallationFC --help
+for details

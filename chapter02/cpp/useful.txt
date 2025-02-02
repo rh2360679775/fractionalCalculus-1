@@ -1,0 +1,34 @@
+//prerequisites
+
+%% install gsl example  
+1.
+wget https://mirror.ibcp.fr/pub/gnu/gsl/gsl-latest.tar.gz
+tar -xvf gsl-latest.tar.gz  
+cd gsl-2.8/ &&./configure
+make -j 48 && make check
+sudo make install
+2.
+Now, run a test
+in case : error while loading shared libraries: libgsl.so.27: cannot open shared object file
+3.
+Review your /etc/ld.so.conf. 
+If /usr/local/lib is not listed there, add it. 
+4.
+sudo ldconfig 
+to detect the shared object file and add it to some system-wide index.
+
+5. testing 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% install boost 
+sudo apt install libboost-all-dev
+g++ testBoost.cpp -o testBoost -I/opt/boost/include
+
+latest version
+wget https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.gz
+tar -xvf boost_1_85_0.tar.gz
+
+testing
+bash runBoost125.sh

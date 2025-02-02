@@ -1,0 +1,396 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20675,        388]
+NotebookOptionsPosition[     19517,        364]
+NotebookOutlinePosition[     19925,        380]
+CellTagsIndexPosition[     19882,        377]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"h", "[", 
+     RowBox[{"x_", ",", "y_"}], "]"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"x", "^", "2"}], " ", "+", " ", 
+     RowBox[{"y", "^", "2"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"w", "[", 
+     RowBox[{"hx_", ",", " ", "hy_"}], "]"}], " ", "=", " ", 
+    RowBox[{"1", "/", 
+     RowBox[{
+      RowBox[{"h", "[", 
+       RowBox[{"hx", ",", "hy"}], "]"}], "^", "alpha"}]}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x_", ",", "y_"}], "]"}], " ", "=", " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"kx", " ", "x"}], " ", "+", " ", 
+      RowBox[{"ky", " ", "y"}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"df", "[", 
+     RowBox[{"x_", ",", "y_"}], "]"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"f", "[", 
+        RowBox[{"x", ",", "y"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "2"}], "}"}]}], "]"}], "+", 
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"f", "[", 
+        RowBox[{"x", ",", "y"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "2"}], "}"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"w", "[", 
+       RowBox[{"hx", ",", "hy"}], "]"}], " ", 
+      RowBox[{"df", "[", 
+       RowBox[{
+        RowBox[{"x", "+", "hx"}], ",", " ", 
+        RowBox[{"y", "+", "hy"}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"hx", ",", 
+       RowBox[{"-", "Infinity"}], ",", " ", "Infinity"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"hy", ",", " ", 
+       RowBox[{"-", "Infinity"}], ",", " ", "Infinity"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.933729535281461*^9, 3.9337296474343944`*^9}, {
+  3.9337296869835477`*^9, 3.9337298394318905`*^9}, {3.93372988218363*^9, 
+  3.933729981758914*^9}, {3.9337300597273855`*^9, 3.9337300622463856`*^9}, {
+  3.93373021299451*^9, 
+  3.9337302135525093`*^9}},ExpressionUUID->"c037e3c5-cbcb-4151-aed9-\
+76ebab1db355"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["x", "2"], "+", 
+  SuperscriptBox["y", "2"]}]], "Output",
+ CellChangeTimes->{3.93372984046214*^9, 3.933729953595559*^9, 
+  3.9337300014677477`*^9, 3.9337300712427588`*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"5451cdad-2836-4a02-93bf-505c2e054f9f"],
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", 
+   RowBox[{
+    SuperscriptBox["hx", "2"], "+", 
+    SuperscriptBox["hy", "2"]}], ")"}], 
+  RowBox[{"-", "alpha"}]]], "Output",
+ CellChangeTimes->{3.93372984046214*^9, 3.933729953595559*^9, 
+  3.9337300014677477`*^9, 3.9337300712467585`*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"9a228e7d-80d6-4741-b15b-8be49583f550"],
+
+Cell[BoxData[
+ SuperscriptBox["\[ExponentialE]", 
+  RowBox[{
+   RowBox[{"kx", " ", "x"}], "+", 
+   RowBox[{"ky", " ", "y"}]}]]], "Output",
+ CellChangeTimes->{3.93372984046214*^9, 3.933729953595559*^9, 
+  3.9337300014677477`*^9, 3.9337300712533445`*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"1c153598-308a-4f13-bbc8-7b0d2da089c4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"kx", " ", "x"}], "+", 
+     RowBox[{"ky", " ", "y"}]}]], " ", 
+   SuperscriptBox["kx", "2"]}], "+", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"kx", " ", "x"}], "+", 
+     RowBox[{"ky", " ", "y"}]}]], " ", 
+   SuperscriptBox["ky", "2"]}]}]], "Output",
+ CellChangeTimes->{3.93372984046214*^9, 3.933729953595559*^9, 
+  3.9337300014677477`*^9, 3.9337300713038754`*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"ff0a479e-f06a-4f4b-a687-1445bad5a865"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Refine", "cas", 
+   "\"Warning: contradictory assumption(s) \
+\\!\\(\\*RowBox[{RowBox[{SqrtBox[RowBox[{\\\"-\\\", \
+SuperscriptBox[\\\"ky\\\", \\\"2\\\"]}]], \\\">\\\", \\\"0\\\"}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \
+\\\"alpha\\\", \\\"]\\\"}], \\\"<\\\", \\\"1\\\"}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"alpha\\\", \\\"]\\\"}], \\\">\\\", \
+\\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \
+RowBox[{\\\"kx\\\", \\\"-\\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\
+\"]\\\"}], \\\"\[LessEqual]\\\", \\\"0\\\"}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"kx\\\", \\\"+\\\", \
+SqrtBox[RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\
+\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]]}], \\\"]\\\"}], \\\"\
+\[GreaterEqual]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"ky\\\", \\\"\[Element]\\\", \
+TemplateBox[List[], \\\"Reals\\\"]}], \\\"&&\\\", RowBox[{\\\"ky\\\", \\\"\
+\[NotElement]\\\", TemplateBox[List[], \\\"Reals\\\"]}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}]}], \\\")\\\"}], \\\"||\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\"<\
+\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+\\\"ky\\\", \\\"]\\\"}], \\\"\[LessEqual]\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \
+\\\"kx\\\", \\\"]\\\"}]}], \\\"&&\\\", RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\
+\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\
+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}], \\\"\[LessEqual]\\\", \\\"0\\\"}]}], \\\")\\\"}], \\\"||\\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \
+\\\"]\\\"}], \\\"\[GreaterEqual]\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\
+\", \\\"]\\\"}]}], \\\"&&\\\", RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"\
+\[GreaterEqual]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Im\\\", \
+\\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\">\\\", \\\"0\\\"}]}], \\\")\\\"}]}], \
+\\\")\\\"}]}], \\\")\\\"}], \\\"||\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"alpha\\\", \\\"]\\\"}], \\\
+\"\[LessEqual]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Re\\\", \
+\\\"[\\\", RowBox[{\\\"kx\\\", \\\"-\\\", RowBox[{\\\"Power\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}]}], \\\"]\\\"}], \\\"<\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\
+\"Re\\\", \\\"[\\\", RowBox[{\\\"kx\\\", \\\"+\\\", SqrtBox[RowBox[{\\\"Times\
+\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\"]\\\"}]]}], \\\"]\\\"}], \\\">\\\", \\\"0\\\"}], \
+\\\"&&\\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\"<\
+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\", \\\"]\\\"}]}], \\\"&&\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"<\\\", \
+\\\"0\\\"}]}], \\\")\\\"}], \\\"||\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\">\
+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\", \\\"]\\\"}]}], \\\"&&\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\">\\\", \
+\\\"0\\\"}]}], \\\")\\\"}]}], \\\")\\\"}]}], \\\")\\\"}]}], \\\")\\\"}], \
+\\\"&&\\\", RowBox[{SqrtBox[RowBox[{\\\"-\\\", SuperscriptBox[\\\"ky\\\", \
+\\\"2\\\"]}]], \\\"\[Element]\\\", TemplateBox[List[], \\\"Reals\\\"]}]}]\\) \
+encountered.\"", 2, 19, 1, 20309719937073781811, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9337302447708025`*^9},
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"4d06bc5e-d7e5-419a-bca1-d848db394962"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Refine", "cas", 
+   "\"Warning: contradictory assumption(s) \
+\\!\\(\\*RowBox[{RowBox[{SqrtBox[RowBox[{\\\"-\\\", \
+SuperscriptBox[\\\"ky\\\", \\\"2\\\"]}]], \\\">\\\", \\\"0\\\"}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \
+\\\"alpha\\\", \\\"]\\\"}], \\\"<\\\", \\\"1\\\"}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"alpha\\\", \\\"]\\\"}], \\\">\\\", \
+\\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \
+RowBox[{\\\"kx\\\", \\\"-\\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\
+\"]\\\"}], \\\"\[LessEqual]\\\", \\\"0\\\"}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"kx\\\", \\\"+\\\", \
+SqrtBox[RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\
+\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]]}], \\\"]\\\"}], \\\"\
+\[GreaterEqual]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"ky\\\", \\\"\[Element]\\\", \
+TemplateBox[List[], \\\"Reals\\\"]}], \\\"&&\\\", RowBox[{\\\"ky\\\", \\\"\
+\[NotElement]\\\", TemplateBox[List[], \\\"Reals\\\"]}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}]}], \\\")\\\"}], \\\"||\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\"<\
+\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+\\\"ky\\\", \\\"]\\\"}], \\\"\[LessEqual]\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \
+\\\"kx\\\", \\\"]\\\"}]}], \\\"&&\\\", RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\
+\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\
+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}], \\\"\[LessEqual]\\\", \\\"0\\\"}]}], \\\")\\\"}], \\\"||\\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \
+\\\"]\\\"}], \\\"\[GreaterEqual]\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\
+\", \\\"]\\\"}]}], \\\"&&\\\", RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"\
+\[GreaterEqual]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Im\\\", \
+\\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\">\\\", \\\"0\\\"}]}], \\\")\\\"}]}], \
+\\\")\\\"}]}], \\\")\\\"}], \\\"||\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"alpha\\\", \\\"]\\\"}], \\\
+\"\[LessEqual]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Re\\\", \
+\\\"[\\\", RowBox[{\\\"kx\\\", \\\"-\\\", RowBox[{\\\"Power\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}]}], \\\"]\\\"}], \\\"<\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\
+\"Re\\\", \\\"[\\\", RowBox[{\\\"kx\\\", \\\"+\\\", SqrtBox[RowBox[{\\\"Times\
+\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\"]\\\"}]]}], \\\"]\\\"}], \\\">\\\", \\\"0\\\"}], \
+\\\"&&\\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\"<\
+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\", \\\"]\\\"}]}], \\\"&&\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"<\\\", \
+\\\"0\\\"}]}], \\\")\\\"}], \\\"||\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\">\
+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\", \\\"]\\\"}]}], \\\"&&\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\">\\\", \
+\\\"0\\\"}]}], \\\")\\\"}]}], \\\")\\\"}]}], \\\")\\\"}]}], \\\")\\\"}], \
+\\\"&&\\\", RowBox[{SqrtBox[RowBox[{\\\"-\\\", SuperscriptBox[\\\"ky\\\", \
+\\\"2\\\"]}]], \\\"\[Element]\\\", TemplateBox[List[], \\\"Reals\\\"]}]}]\\) \
+encountered.\"", 2, 19, 2, 20309719937073781811, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.933730245202976*^9},
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"5d27ab10-ae2d-4f1a-83e5-7bffe4ddc8fd"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Refine", "cas", 
+   "\"Warning: contradictory assumption(s) \
+\\!\\(\\*RowBox[{RowBox[{SqrtBox[RowBox[{\\\"-\\\", \
+SuperscriptBox[\\\"ky\\\", \\\"2\\\"]}]], \\\">\\\", \\\"0\\\"}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \
+\\\"alpha\\\", \\\"]\\\"}], \\\"<\\\", \\\"1\\\"}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"alpha\\\", \\\"]\\\"}], \\\">\\\", \
+\\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \
+RowBox[{\\\"kx\\\", \\\"-\\\", RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\
+\"]\\\"}], \\\"\[LessEqual]\\\", \\\"0\\\"}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"kx\\\", \\\"+\\\", \
+SqrtBox[RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\
+\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]]}], \\\"]\\\"}], \\\"\
+\[GreaterEqual]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"ky\\\", \\\"\[Element]\\\", \
+TemplateBox[List[], \\\"Reals\\\"]}], \\\"&&\\\", RowBox[{\\\"ky\\\", \\\"\
+\[NotElement]\\\", TemplateBox[List[], \\\"Reals\\\"]}], \\\"&&\\\", \
+RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\", \\\"]\\\"}], \
+\\\"\[Equal]\\\", \\\"0\\\"}]}], \\\")\\\"}], \\\"||\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\"<\
+\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+\\\"ky\\\", \\\"]\\\"}], \\\"\[LessEqual]\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \
+\\\"kx\\\", \\\"]\\\"}]}], \\\"&&\\\", RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\
+\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\
+\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]}], \\\"\[LessEqual]\\\", \\\"0\\\"}]}], \\\")\\\"}], \\\"||\\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \
+\\\"]\\\"}], \\\"\[GreaterEqual]\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\
+\", \\\"]\\\"}]}], \\\"&&\\\", RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"\
+\[GreaterEqual]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Im\\\", \
+\\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\">\\\", \\\"0\\\"}]}], \\\")\\\"}]}], \
+\\\")\\\"}]}], \\\")\\\"}], \\\"||\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Re\\\", \\\"[\\\", \\\"alpha\\\", \\\"]\\\"}], \\\
+\"\[LessEqual]\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\"Re\\\", \
+\\\"[\\\", RowBox[{\\\"kx\\\", \\\"-\\\", RowBox[{\\\"Power\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}]}], \\\"]\\\"}], \\\"<\\\", \\\"0\\\"}], \\\"&&\\\", RowBox[{RowBox[{\\\
+\"Re\\\", \\\"[\\\", RowBox[{\\\"kx\\\", \\\"+\\\", SqrtBox[RowBox[{\\\"Times\
+\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \\\"\
+\[RightSkeleton]\\\"}], \\\"]\\\"}]]}], \\\"]\\\"}], \\\">\\\", \\\"0\\\"}], \
+\\\"&&\\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\"<\
+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\", \\\"]\\\"}]}], \\\"&&\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\"<\\\", \
+\\\"0\\\"}]}], \\\")\\\"}], \\\"||\\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \\\"ky\\\", \\\"]\\\"}], \\\">\
+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", \\\"kx\\\", \\\"]\\\"}]}], \\\"&&\\\", \
+RowBox[{RowBox[{RowBox[{\\\"Im\\\", \\\"[\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\
+\\\"}], \\\"+\\\", RowBox[{\\\"Re\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\">\\\", \
+\\\"0\\\"}]}], \\\")\\\"}]}], \\\")\\\"}]}], \\\")\\\"}]}], \\\")\\\"}], \
+\\\"&&\\\", RowBox[{SqrtBox[RowBox[{\\\"-\\\", SuperscriptBox[\\\"ky\\\", \
+\\\"2\\\"]}]], \\\"\[Element]\\\", TemplateBox[List[], \\\"Reals\\\"]}]}]\\) \
+encountered.\"", 2, 19, 3, 20309719937073781811, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.933730245264974*^9},
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"3268a1e1-a494-45dd-a366-1da8ee6c4587"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Refine\\\", \\\"::\\\", \
+\\\"cas\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"", 2, 19, 4, 20309719937073781811, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9337302452829757`*^9},
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"4b9dd45b-de7d-4fce-9613-9db48b90c5d3"]
+}, Open  ]]
+},
+WindowSize->{1440., 747.75},
+WindowMargins->{{Automatic, 1320}, {Automatic, -6}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a4403bc9-85bb-4962-b40d-23418bc3abe4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2205, 62, 200, "Input",ExpressionUUID->"c037e3c5-cbcb-4151-aed9-76ebab1db355"],
+Cell[2788, 86, 291, 6, 32, "Output",ExpressionUUID->"5451cdad-2836-4a02-93bf-505c2e054f9f"],
+Cell[3082, 94, 367, 9, 37, "Output",ExpressionUUID->"9a228e7d-80d6-4741-b15b-8be49583f550"],
+Cell[3452, 105, 331, 7, 33, "Output",ExpressionUUID->"1c153598-308a-4f13-bbc8-7b0d2da089c4"],
+Cell[3786, 114, 577, 16, 33, "Output",ExpressionUUID->"ff0a479e-f06a-4f4b-a687-1445bad5a865"],
+Cell[4366, 132, 4893, 71, 99, "Message",ExpressionUUID->"4d06bc5e-d7e5-419a-bca1-d848db394962"],
+Cell[9262, 205, 4891, 71, 99, "Message",ExpressionUUID->"5d27ab10-ae2d-4f1a-83e5-7bffe4ddc8fd"],
+Cell[14156, 278, 4891, 71, 99, "Message",ExpressionUUID->"3268a1e1-a494-45dd-a366-1da8ee6c4587"],
+Cell[19050, 351, 451, 10, 28, "Message",ExpressionUUID->"4b9dd45b-de7d-4fce-9613-9db48b90c5d3"]
+}, Open  ]]
+}
+]
+*)
+

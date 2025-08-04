@@ -8,7 +8,7 @@ using FloatType = float;
 // precision achieved e-16
 const int prec = 6;
 // order of the polynome = 9
-const std::string myName = "seriesF"; 
+const std::string name = "seriesF"; 
 
 const std::array<FloatType, 9> as = {
    1.0E0, 

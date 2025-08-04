@@ -1,0 +1,4 @@
+Supplemental material for:
+Problem 2.7:  Polynomial approximations of the Gamma function
+Problem 2.8:  Implementing polynomials
+Problem 2.9:  Global Pad´e approximation of the Mittag-Leffler function.

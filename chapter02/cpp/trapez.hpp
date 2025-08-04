@@ -1,54 +1,42 @@
-#include <iostream>
-#include <iomanip>
 #include <chrono>
+#include <iomanip>
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include <cmath>
-#include <omp.h>
+#include <omp.h>                                                        // openMP
 using namespace std;
-using namespace chrono;
-
 
 int main(int argc, char * argv[]) {
-  int pwr = (argc > 1) ? atoi(argv[1]) : 7;  
-  int intervals = pow(10, pwr) ;      // number of intervals 10**pwr
-    
-  auto start = steady_clock::now();
-  
-  // trapez rule : integrate gamma from 0 to 1  
-  //FloatType total = trapez( ghGamma, FloatType(18.5), FloatType(19.5), intervals);
+  int intervals = (argc > 1) ? pow(10, atoi(argv[1])) : pow(10, 7); // number of intervals 
+  int threads = (argc > 2) ? atoi(argv[2]) : omp_get_max_threads(); // openMP threads
 
-  if( omp_get_max_threads() < 4 ){
-    cout << "maximum  available threads <4 , stopping this calculation"<<endl;
-    exit(-1);
+  FloatType a = FloatType(0); // lower limit of integral
+  FloatType b = FloatType(1); // upper limit of integral
+  FloatType h = (b - a) / intervals; // intervalsize
+
+  auto start = chrono::steady_clock::now();
+
+  // trapez rule begins
+  // total = sum of all
+  // start with the endpoints , so we can treat all values simultaneously
+  FloatType total = -FloatType(0.5) * (ghGamma(a) - ghGamma(b));
+
+  omp_set_num_threads(threads); // openMP                            
+  #pragma omp parallel for reduction(+: total) // openMP
+
+  for (int i = 0; i < intervals; i++) {
+    FloatType x = a + h * i; // threads !
+    total += ghGamma(x); // get function values f(x), a <= f(x) <= b
   }
 
-// Parallel region with 4 threads
-   
-  FloatType total1, total2, total3, total4; 
+  total *= h; // sum times interval size
 
-    #pragma omp parallel num_threads(4)
-    {
-        int thread_id = omp_get_thread_num();
-        if (thread_id == 0) {
-              total1 = trapez( ghGamma, FloatType(0), FloatType(0.5), intervals/4);
-        } 
-        else if (thread_id == 1) {
-              total2 = trapez( ghGamma, FloatType(0.5), FloatType(1.0), intervals/4);
-        }
-        else if (thread_id == 2) {
-              total3 = trapez( ghGamma, FloatType(0.0), FloatType(0.5), intervals/4, 1);
-        }
-        else if (thread_id == 3) {
-              total4 = trapez( ghGamma, FloatType(0.5), FloatType(1.0), intervals/4, 1);
-        }
-    }
-
-  FloatType total = 2*(total1 + total2)  + total3 + total4;
-  
-  auto stop = steady_clock::now();
-  duration < double, milli > elapsed_ms = stop - start;
-  
-  cout << " trapez " << "integral = " << fixed << setprecision(prec) << total <<
-    ",intervals 10**" << pwr  <<
+  // trapez rule end
+  auto stop = chrono::steady_clock::now();
+  chrono::duration < double, milli > elapsed_ms = stop - start;
+  cout << name << "  integral = " << fixed << setprecision(prec) << total <<
+    ",intervals " << intervals << ",threads " << threads <<
     " time " << fixed << setprecision(3) << elapsed_ms.count() << " ms" << endl;
   return 0;
 }
